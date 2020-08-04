@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"net/url"
+	"os"
 	"reflect"
 	"strconv"
 	"strings"
@@ -852,6 +853,11 @@ func (c *ServiceClient) serviceRegs(ops *operations, service *structs.Service, w
 	// This enables the consul UI to show that Nomad registered this service
 	meta["external-source"] = "nomad"
 
+	// Override consul service address from env var
+	if os.Getenv("CONSUL_SERVICE_ADDRESS") != "" && strings.HasPrefix(id, "_nomad-task-") {
+		ip = os.Getenv("CONSUL_SERVICE_ADDRESS")
+	}
+
 	// Build the Consul Service registration request
 	serviceReg := &api.AgentServiceRegistration{
 		ID:                id,
@@ -1305,6 +1311,12 @@ func createCheckReg(serviceID, checkID string, check *structs.ServiceCheck, host
 		if check.TLSSkipVerify {
 			chkReg.TLSSkipVerify = true
 		}
+
+		// Override consul service http check address from env var
+		if os.Getenv("CONSUL_SERVICE_ADDRESS") != "" && strings.HasPrefix(serviceID, "_nomad-task-") {
+			host = os.Getenv("CONSUL_SERVICE_ADDRESS")
+		}
+
 		base := url.URL{
 			Scheme: proto,
 			Host:   net.JoinHostPort(host, strconv.Itoa(port)),
