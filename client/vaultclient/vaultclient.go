@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"net/http"
+	"os"
 	"strings"
 	"sync"
 	"time"
@@ -352,7 +353,10 @@ func (c *vaultClient) renew(req *vaultClientRenewalRequest) error {
 
 	var renewalErr error
 	leaseDuration := req.increment
-	if req.isToken {
+	// Do not renew token if this is set.
+	if os.Getenv("VAULT_TOKEN_SKIP_AUTO_RENEW") != "" {
+		leaseDuration = 7 * 24 * 3600 // Set something random
+	} else if req.isToken {
 		// Set the token in the API client to the one that needs
 		// renewal
 		c.client.SetToken(req.id)
