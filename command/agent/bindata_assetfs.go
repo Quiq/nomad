@@ -26,10 +26,10 @@
 package agent
 
 import (
-	"github.com/elazarl/go-bindata-assetfs"
 	"bytes"
 	"compress/gzip"
 	"fmt"
+	"github.com/elazarl/go-bindata-assetfs"
 	"io"
 	"io/ioutil"
 	"os"
@@ -521,25 +521,25 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"dist/assets/chunk.3.bc9566d56c871395c045.js": distAssetsChunk3Bc9566d56c871395c045Js,
-	"dist/assets/nomad-ui-42b7ea78d662561a17da8e757f81f909.js": distAssetsNomadUi42b7ea78d662561a17da8e757f81f909Js,
+	"dist/assets/chunk.3.bc9566d56c871395c045.js":               distAssetsChunk3Bc9566d56c871395c045Js,
+	"dist/assets/nomad-ui-42b7ea78d662561a17da8e757f81f909.js":  distAssetsNomadUi42b7ea78d662561a17da8e757f81f909Js,
 	"dist/assets/nomad-ui-e5c5070ce6f656d40d4e9d2bd26cc088.css": distAssetsNomadUiE5c5070ce6f656d40d4e9d2bd26cc088Css,
-	"dist/assets/vendor-58528c73a86cdadc6a8367c4b74ae037.css": distAssetsVendor58528c73a86cdadc6a8367c4b74ae037Css,
-	"dist/assets/vendor-d2fb412b5d1fc4eae9847911d7e5013a.js": distAssetsVendorD2fb412b5d1fc4eae9847911d7e5013aJs,
-	"dist/crossdomain.xml": distCrossdomainXml,
-	"dist/favicon-1c2527a7a07d130ecbafce75e4615a69.png": distFavicon1c2527a7a07d130ecbafce75e4615a69Png,
-	"dist/images/icons/boot.svg": distImagesIconsBootSvg,
-	"dist/images/icons/cancel.svg": distImagesIconsCancelSvg,
-	"dist/images/icons/clock.svg": distImagesIconsClockSvg,
-	"dist/images/icons/console.svg": distImagesIconsConsoleSvg,
-	"dist/images/icons/history.svg": distImagesIconsHistorySvg,
-	"dist/images/icons/media-pause.svg": distImagesIconsMediaPauseSvg,
-	"dist/images/icons/media-play.svg": distImagesIconsMediaPlaySvg,
-	"dist/images/icons/node-init-circle-fill.svg": distImagesIconsNodeInitCircleFillSvg,
-	"dist/images/icons/search.svg": distImagesIconsSearchSvg,
-	"dist/images/icons/warning.svg": distImagesIconsWarningSvg,
-	"dist/index.html": distIndexHtml,
-	"dist/robots.txt": distRobotsTxt,
+	"dist/assets/vendor-58528c73a86cdadc6a8367c4b74ae037.css":   distAssetsVendor58528c73a86cdadc6a8367c4b74ae037Css,
+	"dist/assets/vendor-d2fb412b5d1fc4eae9847911d7e5013a.js":    distAssetsVendorD2fb412b5d1fc4eae9847911d7e5013aJs,
+	"dist/crossdomain.xml":                                      distCrossdomainXml,
+	"dist/favicon-1c2527a7a07d130ecbafce75e4615a69.png":         distFavicon1c2527a7a07d130ecbafce75e4615a69Png,
+	"dist/images/icons/boot.svg":                                distImagesIconsBootSvg,
+	"dist/images/icons/cancel.svg":                              distImagesIconsCancelSvg,
+	"dist/images/icons/clock.svg":                               distImagesIconsClockSvg,
+	"dist/images/icons/console.svg":                             distImagesIconsConsoleSvg,
+	"dist/images/icons/history.svg":                             distImagesIconsHistorySvg,
+	"dist/images/icons/media-pause.svg":                         distImagesIconsMediaPauseSvg,
+	"dist/images/icons/media-play.svg":                          distImagesIconsMediaPlaySvg,
+	"dist/images/icons/node-init-circle-fill.svg":               distImagesIconsNodeInitCircleFillSvg,
+	"dist/images/icons/search.svg":                              distImagesIconsSearchSvg,
+	"dist/images/icons/warning.svg":                             distImagesIconsWarningSvg,
+	"dist/index.html":                                           distIndexHtml,
+	"dist/robots.txt":                                           distRobotsTxt,
 }
 
 // AssetDir returns the file names below a certain
@@ -581,29 +581,30 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"dist": &bintree{nil, map[string]*bintree{
 		"assets": &bintree{nil, map[string]*bintree{
-			"chunk.3.bc9566d56c871395c045.js": &bintree{distAssetsChunk3Bc9566d56c871395c045Js, map[string]*bintree{}},
-			"nomad-ui-42b7ea78d662561a17da8e757f81f909.js": &bintree{distAssetsNomadUi42b7ea78d662561a17da8e757f81f909Js, map[string]*bintree{}},
+			"chunk.3.bc9566d56c871395c045.js":               &bintree{distAssetsChunk3Bc9566d56c871395c045Js, map[string]*bintree{}},
+			"nomad-ui-42b7ea78d662561a17da8e757f81f909.js":  &bintree{distAssetsNomadUi42b7ea78d662561a17da8e757f81f909Js, map[string]*bintree{}},
 			"nomad-ui-e5c5070ce6f656d40d4e9d2bd26cc088.css": &bintree{distAssetsNomadUiE5c5070ce6f656d40d4e9d2bd26cc088Css, map[string]*bintree{}},
-			"vendor-58528c73a86cdadc6a8367c4b74ae037.css": &bintree{distAssetsVendor58528c73a86cdadc6a8367c4b74ae037Css, map[string]*bintree{}},
-			"vendor-d2fb412b5d1fc4eae9847911d7e5013a.js": &bintree{distAssetsVendorD2fb412b5d1fc4eae9847911d7e5013aJs, map[string]*bintree{}},
+			"vendor-58528c73a86cdadc6a8367c4b74ae037.css":   &bintree{distAssetsVendor58528c73a86cdadc6a8367c4b74ae037Css, map[string]*bintree{}},
+			"vendor-d2fb412b5d1fc4eae9847911d7e5013a.js":    &bintree{distAssetsVendorD2fb412b5d1fc4eae9847911d7e5013aJs, map[string]*bintree{}},
 		}},
 		"crossdomain.xml": &bintree{distCrossdomainXml, map[string]*bintree{}},
 		"favicon-1c2527a7a07d130ecbafce75e4615a69.png": &bintree{distFavicon1c2527a7a07d130ecbafce75e4615a69Png, map[string]*bintree{}},
 		"images": &bintree{nil, map[string]*bintree{
 			"icons": &bintree{nil, map[string]*bintree{
-				"boot.svg": &bintree{distImagesIconsBootSvg, map[string]*bintree{}},
-				"cancel.svg": &bintree{distImagesIconsCancelSvg, map[string]*bintree{}},
-				"clock.svg": &bintree{distImagesIconsClockSvg, map[string]*bintree{}},
-				"console.svg": &bintree{distImagesIconsConsoleSvg, map[string]*bintree{}},
-				"history.svg": &bintree{distImagesIconsHistorySvg, map[string]*bintree{}},
-				"media-pause.svg": &bintree{distImagesIconsMediaPauseSvg, map[string]*bintree{}},
-				"media-play.svg": &bintree{distImagesIconsMediaPlaySvg, map[string]*bintree{}},
+				"boot.svg":                  &bintree{distImagesIconsBootSvg, map[string]*bintree{}},
+				"cancel.svg":                &bintree{distImagesIconsCancelSvg, map[string]*bintree{}},
+				"clock.svg":                 &bintree{distImagesIconsClockSvg, map[string]*bintree{}},
+				"console.svg":               &bintree{distImagesIconsConsoleSvg, map[string]*bintree{}},
+				"history.svg":               &bintree{distImagesIconsHistorySvg, map[string]*bintree{}},
+				"media-pause.svg":           &bintree{distImagesIconsMediaPauseSvg, map[string]*bintree{}},
+				"media-play.svg":            &bintree{distImagesIconsMediaPlaySvg, map[string]*bintree{}},
 				"node-init-circle-fill.svg": &bintree{distImagesIconsNodeInitCircleFillSvg, map[string]*bintree{}},
-				"search.svg": &bintree{distImagesIconsSearchSvg, map[string]*bintree{}},
-				"warning.svg": &bintree{distImagesIconsWarningSvg, map[string]*bintree{}},
+				"search.svg":                &bintree{distImagesIconsSearchSvg, map[string]*bintree{}},
+				"warning.svg":               &bintree{distImagesIconsWarningSvg, map[string]*bintree{}},
 			}},
 		}},
 		"index.html": &bintree{distIndexHtml, map[string]*bintree{}},
@@ -657,7 +658,6 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-
 
 func assetFS() *assetfs.AssetFS {
 	assetInfo := func(path string) (os.FileInfo, error) {
