@@ -11,10 +11,10 @@ $ErrorActionPreference = "Stop"
 
 
 $usage = @"
-Usage: install-nomad [options...]
+Usage: provision.ps1 [options...]
 Options (use one of the following):
  --nomad_sha SHA          full git sha to install from S3
- --nomad_version VERSION  release version number (ex. 0.12.3+ent)
+ --nomad_version VERSION  release version number (ex. 0.12.4+ent)
  --nomad_binary FILEPATH  path to file on host
  --nostart                do not start or restart Nomad
 "@
